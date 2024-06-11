@@ -1,0 +1,117 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name_product": "KungFu Panda 4",
+      "image_product": "pro1.jpg",
+      "brand": "phim hoạt hình",
+      "video": "detail_banner.mp4",
+      "price_product": 100000,
+      "content": "Kung Fu Panda 4 tiếp tục câu chuyện của Po, một con gấu trúc tham ăn, ngây thơ nhưng đầy tài năng, trong cuộc hành trình mới đầy phiêu lưu và sự phát triển cá nhân. Lần này, Po sẽ đối mặt với một thử thách mới khi thế giới của anh đứng trước nguy cơ bị tiêu diệt. Sau sự kiện trong phần trước, Po đã trở thành Bậc Thầy mới của Làng Thanh Long, và sức mạnh của anh đã lan rộng ra khắp vùng đất xanh. Tuy nhiên, khi một mối đe dọa mới bắt đầu nổi lên từ bóng tối của quá khứ, Po và đồng đội của anh phải tìm ra cách để đối phó với nó. Một phần của hành trình của Po là việc đối mặt với quá khứ của mình. Anh phát hiện ra những bí mật đen tối về nguồn gốc của mình và phải đối mặt với những quyết định khó khăn liên quan đến việc làm thế nào để sử dụng sức mạnh của mình một cách đúng đắn. Trong khi đó, các nhân vật yêu quý như Shifu, Tigress, Monkey và các thành viên của Làng Thanh Long cũng đứng trước những thách thức mới. Họ phải hợp tác với nhau để chiến đấu chống lại mối đe dọa lớn hơn bao giờ hết và bảo vệ hòa bình cho thế giới của họ. Trong một cuộc phiêu lưu đầy hành động, hài hước và sự trưởng thành, Po và nhóm của mình phải đối mặt với những thử thách đầy khó khăn nhất từ trước đến nay, trong Kung Fu Panda 4: Hành trình của Bậc Thầy."
+    },
+    {
+      "id": 2,
+      "name_product": "Quật Mộ Trùng Ma",
+      "image_product": "pro2.jpg",
+      "brand": "phim kinh dị",
+      "video": "detail_banner2.mp4",
+      "price_product": 200000,
+      "content": "Hai pháp sư, một thầy phong thuỷ và một chuyên gia khâm liệm cùng hợp lực khai quật ngôi mộ bị nguyền rủa của một gia đình giàu có, nhằm cứu lấy sinh mạng hậu duệ cuối cùng trong dòng tộc. Bí mật hắc ám của tổ tiên được đánh thức. Siêu phẩm kinh dị năm 2024 của Hàn Quốc quy tụ dàn ngôi sao hạng A: hoi Min Sik, Yoo Hai Jin, Kim Go Eun, Lee Do Hyun"
+    },
+    {
+      "id": 3,
+      "name_product": "Quý Cô Thừa Kế 2",
+      "image_product": "pro3.jpg",
+      "brand": "phim tình cảm",
+      "price_product": 100000
+    },
+    {
+      "id": 4,
+      "name_product": "June: Hành Tinh Cát",
+      "image_product": "pro4.jpg",
+      "brand": "phim hành động"
+    },
+    {
+      "id": 5,
+      "name_product": "Bức Họa Bí Ẩn",
+      "image_product": "pro5.jpg",
+      "brand": "phim kinh dị"
+    },
+    {
+      "id": 6,
+      "name_product": "Biệt Đội Săn Rồng",
+      "image_product": "pro6.jpg",
+      "brand": "phim hành động"
+    },
+    {
+      "id": 7,
+      "name_product": "Marita: Vong Nữ Đoạt Hồn",
+      "image_product": "pro7.jpg",
+      "brand": "phim kinh dị"
+    },
+    {
+      "id": 8,
+      "name_product": "Mai",
+      "image_product": "pro8.jpg",
+      "brand": "phim hài"
+    }
+  ],
+  "users": [
+    {
+      "name": "Nguyễn Văn Tèo 2",
+      "email": "hung1@gmail.com",
+      "password": "1234",
+      "permission": 2,
+      "id": 4
+    },
+    {
+      "name": "lònd",
+      "email": "kjiuhbyniujmik@email.com",
+      "id": 5
+    },
+    {
+      "name": "ưdd",
+      "email": "kjiuhbyniujmik@email.com",
+      "id": 6
+    },
+    {
+      "name": "lònd 222222222222222222",
+      "email": "kjiuhbyniujmik@email.com",
+      "id": 7
+    }
+  ],
+  "sanpham":[
+    {
+      "id": 1,
+      "name_product": "KungFu Panda 4444444444",
+      "image_product": "pro1.jpg",
+      "price":"15.000.000",
+      "giamgia":"5%"
+    },
+    {
+      "id": 2,
+      "name_product": "CHăn Ga gối nệm",
+      "image_product": "pro2.jpg",
+      "price":"19.000.000",
+      "giamgia":"8%"
+    },
+    {
+      "id": 3,
+      "name_product": "đèn phòng ngủ",
+      "image_product": "pro3.jpg",
+      "price":"4.000.000",
+      "giamgia":"2%"
+    },
+    {
+      "id":4,
+      "name_product": "KungFu Prfgthjikolkijhgfanda 4",
+      "image_product": "pro4.jpg",
+      "price":"7.000.000",
+      "giamgia":"10%"
+    }
+  
+
+]
+  
+
+}

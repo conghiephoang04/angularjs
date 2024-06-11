@@ -1,0 +1,64 @@
+<div class="container mt-3">
+   <div class="row">
+    <h2 class="text-center" style="color: brown;">Giỏ Hàng</h2>
+    <p class="text-center">hãy mua phim để cso trải nghiệm tốt nhất</p>            
+    <table class="table table-hover text-center">
+      <thead>
+        <tr>
+            <th>Stt</th>
+          <th>tên phim</th>
+          <th>hình ảnh</th>
+          <th>giá</th>
+          <th>Số lượng</th>
+          <th>tổng tiền</th>
+          <th>Hành động</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="show in cart" >
+         <td>{{$index+1}}</td>
+         <td>{{show.name_product}}</td>
+         <td><img style="width: 100px;" src="images/{{show.image_product}}" alt=""></td>
+         <td>{{show.price_product |number:0}}<sup>đ</sup></td>
+         <td>{{show.quantity}}</td>
+         <td>{{show.quantity * show.price_product | number:0}}<sup>đ</sup></td>
+         <td><a href=""  ng-click="remove($index)" class="btn btn-danger">Xóa</a></td>
+        </tr>
+      </tbody>
+     <tfoot>
+        <tr>
+            <td>Thành tiền :</td>
+            <td colspan="5" >{{tinhtong() | number:0}}đ</td>
+            <td><a href="" ng-show="cart!=''" ng-click="removeall()" class="btn btn-danger">Xóa Hết</a></td>
+          </tr>
+     </tfoot>
+    </table>
+    <!-- Button to Open the Modal -->
+
+  
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          Modal body..
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+   </div>
+  </div><br>

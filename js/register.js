@@ -1,0 +1,40 @@
+app.controller("rigisterController", function ($scope, $http) {
+    $scope.users=[];
+    $scope.loadData=function(){
+        $http.get("http://localhost:3000/users")
+        .then(function(res){
+            $scope.users=res.data
+        })
+         
+        
+    }
+    $scope.loadData() 
+    $scope.addUser=function(){
+        if($scope.myForm.$valid){
+        console.log($scope.user);
+        $http.post("http://localhost:3000/users",$scope.user)
+        .then(res=>{
+        $scope.loadData()
+        })
+        }
+        }
+    $scope.users=[]
+    $scope.deleteUser=function(id){
+        $http.delete("http://localhost:3000/users/"+id)
+        .then(res=>{
+        $scope.loadData()
+        })
+        }
+    $scope.editUser=function(id){
+        $http.get("http://localhost:3000/users/"+id)
+        .then(res=>{
+        $scope.edituser=res.data
+        })
+        }  
+        $scope.updateUser=function(){
+            $http.put("http://localhost:3000/users/"+$scope.edituser.id,$scope.edituser)
+            .then(res=>{
+            $scope.loadData()
+            })
+            }   
+})

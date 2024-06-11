@@ -1,0 +1,23 @@
+<aside class="container-fluid">
+    <div class="accout-aside">
+    <h1>Chào Mừng Bạn Đến Beo Cinema</h1>
+
+    <form>
+        <div><label for="name"> Email</label>
+            <input class="place" ng-model="logindata.email" type="email" placeholder="htm@gmail.com" id="name"></div>
+        <div>
+            <label for="name">Mật Khẩu</label>
+            <input class="place" ng-model="logindata.password" type="password" placeholder="1234" id="name">
+      </div>
+      
+        <button ng-click="login()" class="button-in1">Đăng nhập</button>
+
+        <span> Bạn có muốn tạo tài khoản?<a href="#!dangnhap"> Đăng Nhập</a></span> 
+        <span>Hoặc</span>
+    <div class="login-other">
+        <button class="button-in2">Email</button>
+        <button class="button-in3">Facebook</button>
+    </div>
+    </div> 
+    </form>
+</aside>

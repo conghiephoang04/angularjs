@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark row">
+    <ul class="navbar-nav me-auto">
+    <li class="nav-item active">
+      <a class="nav-link" href=""><span class="glyphicon glyphicon-home"></span> Trang chủ</span></a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="" ><span class="glyphicon glyphicon-earphone"></span>Đơn Hàng</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href=""><span class="glyphicon glyphicon-envelope"></span>Tài Khoản Khách Hàng</a>
+    </li>
+</ul>
+  </nav>
+  <body ng-app="myApp">
+    <div class="container" ng-controller="myCtrl1">
+        <div class="row">
+            <form>
+                <div class="from-group">
+                    <label for="my-input">Tên Tài Khoản</label>
+                    <input id="my-input" ng-model="student.name" class="form-control" type="text">
+                </div>
+                <div class="from-group">
+                    <label for="my-input">Gmail</label>
+                    <input id="my-input"  ng-model="student.birthday" class="form-control" type="email"></input>
+                </div>
+                <div class="from-group">
+                    <label for="my-input">Số Điện Thoại</label>
+                    <input for="my-input" ng-model="student.mark" class="form-control" type="number"></input>
+                </div>
+                <div class="from-group">
+                    <label for="my-input">Mật Khẩu</label>
+                    <input id="my-input"  ng-model="student.birthday" class="form-control" type="password"></input>
+                </div>
+                <div class="from-group" style="margin-top: 10px;">
+                    <button type="submit" ng-disabled="index != -1" class="btn btn-primary" ng-click="add()">Thêm</button>
+                    <button type="submit" ng-disabled="index == -1"  class="btn btn-primary" ng-click="update()">Sửa</button>
+                    <button type="submit" ng-disabled="index == -1"  class="btn btn-primary" ng-click="delete()">Xóa</button>
+                    <button type="submit" class="btn btn-primary" ng-click="cancel()">Hủy</button>
+                    <button type="submit" ng-disabled="index != -1" class="btn btn-primary" ng-click="clear()">Mới</button>
+                </div>
+            </form>
+        </div>
+        <div class="row"  ng-controller="myCtrl">
+            <table class="table table-bordered" style="margin-top: 10px;" >
+                <tbody>
+                    <tr>
+                        <td>Tên tài Khoản </td>
+                        <td>Gmail</td>
+                        <td>Số điện thoại</td>
+                        <td>Mật khẩu</td>
+                        <td></td>
+                    </tr>
+                    <tr ng-repeat="st in students">
+                        <td>{{st.name}}</td>
+                        <td>{{st.birthday}}</td>
+                        <td>{{st.mark}}</td>
+                        <td>1234</td>
+                        <td>
+                            <a href="" ng-click="edit($index)">Edit</a>
+                        </td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+      <script>
+        var app = angular.module('myApp', []);
+
+        app.controller('myCtrl', function($scope,$rootScope) {
+            $rootScope.students = [
+                {
+                    name:"Khánh",
+                    birthday:"21/09/04",
+                    mark:"9",
+                },
+                {
+                    name:"Khuê",
+                    birthday:"21/09/04",
+                    mark:"8",
+                }
+
+            ]   
+        });
+
+        app.controller('myCtrl1', function($scope,$rootScope) {
+            $rootScope.student ={};
+            $scope.index = -1
+            $scope.add = function () {
+                $scope.students.push(angular.copy($scope.student))
+            }
+            //edit
+            $scope.edit = function (index) {
+                $scope.index =index;
+                $scope.student = angular.copy($scope.students[index])
+            }
+            //update
+            $scope.update = function (index) {
+                $scope.students[$scope.index] = angular.copy($scope.student);
+                $scope.clear();
+            }
+            //delete
+            $scope.delete = function () {
+                $scope.students.splice($scope.index,1);
+                $scope.clear();
+            }
+            //cancel
+            $scope.cancel = function () {
+                if ($scope.index == -1) {
+                    $scope.clear();
+                }else{
+                    $scope.edit($scope.index);
+                }
+            }
+            //moi
+            $scope.clear = function () {
+                $scope.student = {}
+            }
+        });
+        </script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>

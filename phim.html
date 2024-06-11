@@ -1,0 +1,139 @@
+ <!-- The slideshow/carousel -->
+ <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/bâ.jpeg" alt="Los Angeles" class="d-block w-100">
+    </div>
+    <div class="carousel-item">
+      <img src="images/banner2.jpg" alt="Chicago" class="d-block w-100">
+    </div>
+    <div class="carousel-item">
+      <img src="images/banner3.jpg" alt="New York" class="d-block w-100">
+    </div>
+  </div>
+
+  <!-- Left and right controls/icons -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next " type="button" data-bs-target="#demo" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+    </div>
+<br>
+  </header>
+  <!-- acticle start -->
+  <div class="container">
+  <div class="row p-0 m-0">
+  
+    <section class="col-lg-3 col-md-12 ">
+        <div class="nn-cart">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <form method="post" action="/Product/Search">
+                        <input ng-model="search" placeholder="Tìm phim" name="Keywords" class="form-control" />
+                    </form>
+                </div>
+            </div>
+        </div><br><br>
+        <div id="accordion">
+
+            <div class="card">
+              <div class="card-header">
+                <a class="btn" data-bs-toggle="collapse" href="#collapseOne">
+                  <strong><span class="glyphicon glyphicon-list"></span> thể loại</strong>
+                </a>
+              </div>
+              <div id="collapseOne" class="collapse show" data-bs-parent="#accordion">
+                <div class="card-body">
+                  
+                  <select style="width: 100%;" name="" id="" ng-model="select" ng-change="filterByBrand()">
+                    <option value="">Tất cả</option>
+                    <option  value="phim hài">phim hài</option>
+                    <option value="phim hoạt hình">phim hoạt hình</option>
+                    <option value="phim hành động">phim hành động</option>
+                    <option value="phim tình cảm">phim tình cảm</option>
+                    <option value="phim kinh dị">phim kinh dị</option>
+                  </select>
+              </div>
+              
+              
+              </div>
+            </div>
+          
+            <div class="card">
+              <div class="card-header">
+                <a class="collapsed btn" data-bs-toggle="collapse" href="#collapseTwo">
+                  Đạo diễn
+                </a>
+              </div>
+              <div id="collapseTwo" class="collapse" data-bs-parent="#accordion">
+                <div class="card-body">
+                    <a href="" class="list-group-item">Nguyễn Quang Dũng</a>
+                    <a href="" class="list-group-item">Nguyễn Trọng Khoa</a>
+                    <a href="" class="list-group-item">Steven Spielberg (Hoa Kỳ)</a>
+                    <a href="" class="list-group-item">Christopher Nolan (Anh)</a>
+                    <a href="" class="list-group-item">Hayao Miyazaki (Nhật Bản)</a>
+                    <a href="" class="list-group-item">Bong Joon-ho (Hàn Quốc)</a>
+                </div>
+              </div>
+            </div>
+            
+          
+            <div class="card">
+              <div class="card-header">
+                <a class="collapsed btn" data-bs-toggle="collapse" href="">
+                  Diễn viên suất sắc
+                </a>
+              </div>
+              <div id="collapseThree" class="collapse" data-bs-parent="#accordion">
+                <div class="card-body">
+                    <a href="" class="list-group-item">Trấn Thành</a>
+                    <a href="" class="list-group-item">Ninh Dương Lan Ngọc</a>
+                    <a href="" class="list-group-item">Leonardo DiCaprio (Hoa Kỳ)</a>
+                    <a href="" class="list-group-item">Tom Hanks (Hoa Kỳ):</a>
+                    <a href="" class="list-group-item">Gong Li (Trung Quốc)</a>
+                    <a href="" class="list-group-item">Cate Blanchett (Úc)</a>
+                </div>
+              </div>
+            </div>
+            <div class="sale text-center">
+                <img class="pt-3  " src="images/sale2.jpg" width="260px" height="100%" alt="">
+                <img  class="pt-3 " src="images/sale3.jpg" width="260px" height="100%" alt="">
+              </div>
+          </div>
+    </section>
+    <section class="col-lg-9 col-md-12 ">  
+      <div class="container-fluid">
+       <div class="row">
+        
+        <div class=" col-12 col-xl-4 col-lg-4 col-md-6 col-sm-12 product text-center"ng-repeat="pro in products |filter:search " ng-click="showProductDetail(pro)">
+          <a href="#" class="thumbnail ">
+            <img src="images/{{pro.image_product}}" alt="" class="phim">
+          </a>
+          <div class="caption" style="width: 90%;">
+            <b>{{pro.name_product}}</b>
+          </div>
+          <div class="btn"  style="width: 90%;">
+            <a href="#!detail" class=" btn btn-sm btn-info  " >Chi tiết</a>
+              <button ng-click="addcart()" class=" btn btn-sm btn-danger  " >Mua phim</button>
+          </div>
+        </div>
+
+       </div> 
+       
+      </div>
+    </section>
+    <div class="phantrang">
+      <div class="row">
+        <ul class="pager col-4 text-center d-flex">
+          <li><a href="" ng-click="fisrt()" class="btn btn-danger">đầu</a></li>
+          <li><a href="" ng-click="prev()" class="btn btn-danger">quay lại</a></li>
+          <li><a href="" ng-click="next()" class="btn btn-danger">tiếp theo</a></li>
+          <li><a href="" ng-click="last()" class="btn btn-danger">cuối</a></li>
+        </ul>
+        
+    
+      </div>
+    </div>
+   <!-- aside   -->

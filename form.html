@@ -1,0 +1,26 @@
+<h3>thêm user</h3>
+<div class="row">
+    <form class="col-6" name="myForm" ng-submit="addUser()">
+        <input type="text" name="user.name" placeholder="nhập tên" ng-model="user.name" required> <br> 
+        <div style="color: brown;" ng-if="myForm['user.name'].$invalid && myForm['user.name'].$touched">
+            vui lòng nhập tên
+        </div>
+        <input type="email" name="user.email" placeholder="nhập email" ng-model="user.email" required> <br>    
+        <div style="color: brown;" ng-if="myForm['user.email'].$invalid && myForm['user.email'].$touched">
+            <span ng-if="myForm['user.email'].$error.require">vui lòng nhập email</span>
+            <span ng-if="myForm['user.email'].$error.email">vui lòng nhập email đúng định dạng</span>
+        </div>
+        gới tính:
+        <input type="radio" name="" id="" ng-model="user.gender" value="nam"> nam
+        <input type="radio" name="" id="" ng-model="user.gender" value="nữ">nữ <br>
+        sở thích: <br>
+        <input type="checkbox" ng-model="all">tất cả<br>
+        <input type="checkbox" ng-model="user.hobby.music" value="nghe nhạc" ng-checked="all">nghe nhạc <br>
+        <input type="checkbox" ng-model="user.hobby.gym" value="tập gym" ng-checked="all">tập gym <br>
+        <input type="checkbox" ng-model="user.hobby.game" value="chơi game" ng-checked="all">chơi game <br>
+        quốc tịch: 
+        <select ng-model="user.country" ng-options="c for c in countries"></select> <br>
+        <button>thêm</button>
+        <br>
+    </form>
+</div>

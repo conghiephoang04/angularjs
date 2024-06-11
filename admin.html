@@ -1,0 +1,51 @@
+
+    <div class="container">
+        <div class="row">
+            <form name="myForm" >
+                <div class="from-group">
+                    <label for="name">Tên sản phẩm</label>
+                    <input id="name" ng-model="products.name_product" class="form-control" type="text" required>
+                </div>
+                <div class="from-group">
+                    <label for="image">Hình sản phẩm</label>
+                    <input id="image" type="file" onchange="angular.element(this).scope().handldeImage(event)" class="form-control" required>
+                </div>
+                <div class="from-group">
+                    <label for="brand">Thể loại</label>
+                    <input id="brand" ng-model="products.brand" class="form-control" type="text" required>
+                </div>
+             
+                <div class="from-group" style="margin-top: 10px;">
+                    <button type="submit" ng-click="addpr()" class="btn btn-primary">Thêm</button>
+                    <button type="submit" ng-disabled="index == -1" class="btn btn-primary" ng-click="updateProducts()">Sửa</button>
+                    <button type="submit" ng-disabled="index == -1" class="btn btn-primary" ng-click="deleteProducts()">Xóa</button>
+                    <button type="submit" class="btn btn-primary" ng-click="cancel()">Hủy</button>
+                    <button type="submit" ng-disabled="index != -1" class="btn btn-primary" ng-click="clear()">Mới</button>
+                </div>
+            </form>
+        </div>
+        <div class="row"   >
+            <table class="table table-bordered" style="margin-top: 10px;">
+                <tbody>
+                    <tr>
+                        <td>Tên phim</td>
+                        <td>Hình ảnh </td>
+                        <td>thể loại</td>
+                        <td></td>
+                    </tr>
+                    <tr ng-repeat="pro in products">
+                        <td>{{pro.name_product}}</td>
+                        <td><img src="images/{{pro.image_product}}" height="200px" alt="" class="phim"></td>
+                        <td>{{pro.brand}}</td>
+                        <td>
+                            <a href="" ng-click="delete(pro)" >Xóa</a>
+                            <a href="" ng-click="deleteProducts()" >Edit</a>
+                        </td>
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+     
+  

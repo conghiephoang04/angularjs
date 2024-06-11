@@ -1,0 +1,75 @@
+<h3>thêm user</h3>
+<form name="myForm" ng-submit="addUser()">
+    <input type="text" name="user.name" placeholder="Nhập tên" ng-model="user.name" required>
+    <br>
+    <div style="color:red" ng-if="myForm['user.name'].$touched && myForm['user.name'].$invalid">
+    Vui lòng nhập tên
+    </div>
+    <input type="email" name="user.email" placeholder="Nhập email" ng-model="user.email" required>
+    <br>
+    <div style="color:red" ng-if="myForm['user.email'].$touched && myForm['user.email'].$invalid">
+    <span ng-if="myForm['user.email'].$error.required">Vui lòng nhập email</span>
+    <span ng-if="myForm['user.email'].$error.email">Vui lòng nhập đúng định dạng email</span>
+    </div><br>
+    <button>Thêm User</button>
+   
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Tên</th>
+            <th>Email</th>
+            <th>sửa</th>
+            <th>xóa</th>
+        </tr>
+        <tr ng-repeat="user in users">
+            <td>{{user.id}}</td>
+            <td>{{user.name}}</td>
+            <td>{{user.email}}</td>
+            <td><button class="btn btn-warning" ng-click="editUser(user.id)" data-bs-toggle="modal" data-bs-target="#myModal">Sửa</button></td>
+            <td><button ng-click="deleteUser(user.id)" class="btn btn-info">xóa</button></td>
+        </tr>
+        
+    </table>
+    <!-- Button to Open the Modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+    Open modal
+  </button>
+  
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+  
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+            <form name="myEditForm" ng-submit="updateUser()">
+            <input type="text" name="edituser.name" placeholder="Nhập tên" ng-model="edituser.name" required> <br>
+            <div style="color:red" ng-if="myEditForm['edituser.name'].$touched &&myEditForm['edituser.name'].$invalid">
+            Vui lòng nhập tên
+            </div>
+            
+            <input type="email" name="edituser.email" placeholder="Nhập email" ng-model="edituser.email" required> <br>
+            <div style="color:red" ng-if="myEditForm['edituser.email'].$touched &&
+            myEditForm['edituser.email'].$invalid">
+            
+            <span ng-if="myEditForm['edituser.email'].$error.required">Vui lòng nhập email</span>
+            <span ng-if="myEditForm['edituser.email'].$error.email">Vui lòng nhập đúng định dạng email</span>
+            </div>
+            <button>Cập nhật</button>
+            </form>
+            </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+</form>
